@@ -1,0 +1,108 @@
+body {
+  background-color: #000;
+  overflow: hidden;
+}
+
+/* Adicionar dps do main */
+main::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-height: 100vh;
+  width: 80vw;
+  /*  */
+  background: linear-gradient(-233deg, #000 40%, rgba(0, 0, 0, 0) 65%) no-repeat;
+}
+main .personagem {
+ 
+  display: none;
+  /* div personagem com altura toda */
+  height: 100vh;
+}
+
+/*  So quando o elemento tiver essas duas classes nele */
+main .personagem.selecionado {
+  /* vamos mostrar */
+  display: block;
+}
+
+main .personagem .imagem {
+  /* 100% do que dá pra ocupar na div pai */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.conteudo {
+  
+  position: absolute;
+  top: 0;
+  left: 120px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  /* altura minima de 100% da iew port */
+  min-height: 100vh;
+  max-width: 380px;
+  /* Maior prioridade dos elementos q tem, no caso so tem esse */
+  z-index: 1;
+}
+
+.conteudo .nome-personagem {
+  color: #fff;
+  font-size: 48px;
+  font-family: "Secular One";
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+
+.conteudo .descricao {
+  color: #fff;
+  font-family: "Rubik";
+  line-height: 24px;
+}
+
+.conteudo .logo {
+  background-image: url(../imagens/one-piece-logo.png);
+  /*  vai cobrir a area definida pro i. No casso height 100 e width 230px */
+  background-size: cover;
+  height: 100px;
+  width: 230px;
+  margin-bottom: 35px;
+}
+
+.botoes {
+    position: fixed;
+    top: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    width: 180px;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.3);
+    gap: 10px;
+}
+
+/* <button class="botao"> */
+
+.botoes .botao{
+    border: none;
+    background: #000;
+    cursor: pointer;
+    border-radius: 50%;
+    
+}
+
+.botoes .botao img {
+    border-radius: 50%;
+}
+
+.botoes .botao.selecionado {
+    transform: scale(1.2);
+    box-shadow: 0 0 10px #D9D9D9;
+}
